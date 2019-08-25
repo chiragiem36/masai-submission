@@ -28,6 +28,10 @@ code {
   flex-direction: column;
 }
 
+.align-center {
+  align-items: center
+}
+
 .justify-center {
   justify-content: center
 }
@@ -39,5 +43,10 @@ code {
 .home-page > div {
   display: flex;
   flex-direction: row;
-  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .home-page > div {
+    width: 50%;
+  }
 }

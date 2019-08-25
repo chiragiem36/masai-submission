@@ -1,5 +1,5 @@
 const INIT_STATE = {
-    timer: 3,
+    timer: 300,
 };
 
 
