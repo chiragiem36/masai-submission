@@ -54,7 +54,9 @@ const Timer = (props) => {
                     !interval && <button onClick={start_timer}>start</button>
                 }
                 <button onClick={stop_timer}>stop</button>
-                <button onClick={reset_timer}>reset</button>
+                {
+                    !interval && <button onClick={reset_timer}>reset</button>
+                }
             </div>
             <div>
                 <input type="text" value={props.timer} onChange={set_timer} />

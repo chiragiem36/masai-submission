@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-import { stop_timer } from "../../actions/index.js";
 import {set_watch as set_watch_action} from "./../../actions/";
 
 const Timer = (props) => {
@@ -10,13 +9,13 @@ const Timer = (props) => {
     const [interval, set_interval] = useState(null)
     const [watch, set_watch] = useState(0)
 
-    const stop_timer = () => {
+    const stop_watch = () => {
         clearInterval(interval)
         clearInterval(new_interval)
         set_interval(null)
     }
 
-    const start_timer = () => {
+    const start_watch = () => {
         if (interval) {
             return
         }
@@ -33,6 +32,7 @@ const Timer = (props) => {
     }
 
     const reset_watch = () => {
+        i = 0;
         set_watch(0)
     }
     
@@ -43,10 +43,12 @@ const Timer = (props) => {
             </div>
             <div>
                 {
-                    !interval && <button onClick={start_timer}>start</button>
+                    !interval && <button onClick={start_watch}>start</button>
                 }
-                <button onClick={stop_timer}>stop</button>
-                <button onClick={stop_timer}>reset</button>
+                <button onClick={stop_watch}>stop</button>
+                {
+                    !interval && <button onClick={reset_watch}>reset</button>
+                }
             </div>
         </div>
     )
