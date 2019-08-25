@@ -1,12 +1,12 @@
 const INIT_STATE = {
-    timer: 3,
+    time: 0,
 };
 
 
 export default (state = INIT_STATE, action) => {
     switch (action.type) {
-        case "SET_TIMER": {
-            return {...state, timer: action.payload};
+        case "SET_TIME": {
+            return {...state, time: action.payload};
             break;
         }
         default:

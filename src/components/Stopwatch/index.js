@@ -1,14 +1,14 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
 import { stop_timer } from "../../actions/index.js";
-import {set_timer as set_timer_action} from "./../../actions/";
+import {set_watch as set_watch_action} from "./../../actions/";
 
 const Timer = (props) => {
 
     let i = 0, new_interval = null;
 
     const [interval, set_interval] = useState(null)
-    const [time_left, set_time_left] = useState(props.timer)
+    const [watch, set_watch] = useState(0)
 
     const stop_timer = () => {
         clearInterval(interval)
@@ -22,54 +22,43 @@ const Timer = (props) => {
         }
 
         i = 0;
-        set_time_left(props.timer);
+        set_watch(0);
 
         new_interval = setInterval(() => {
             i++;
-            const new_time = time_left - i;
-            set_time_left(new_time)
-            if (new_time <= 0) {
-                stop_timer()
-                i = 0;
-            }
+            const new_time = i;
+            set_watch(new_time)
         }, 1000);
         set_interval(new_interval)
     }
 
-    const reset_timer = () => {
-        set_time_left(props.timer)
-    }
-
-    const set_timer = (e) => {
-        props.set_timer(e.target.value)
+    const reset_watch = () => {
+        set_watch(0)
     }
     
     return (
         <div className="d-f-c">
             <div>
-                {time_left}s
+                {watch}s
             </div>
             <div>
                 {
                     !interval && <button onClick={start_timer}>start</button>
                 }
                 <button onClick={stop_timer}>stop</button>
-                <button onClick={reset_timer}>reset</button>
-            </div>
-            <div>
-                <input type="text" value={props.timer} onChange={set_timer} />
+                <button onClick={stop_timer}>reset</button>
             </div>
         </div>
     )
 }
 
-const mapStateToProps = ({timer}) => {
-    return timer
+const mapStateToProps = ({stopwatch}) => {
+    return stopwatch
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        set_timer: (time) => dispatch(set_timer_action(time))
+        set_watch: (time) => dispatch(set_watch_action(time))
     }
 }
 
