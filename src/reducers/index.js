@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import timer from "./timer";
+import curriculam from "./curriculam";
 
 export default () => combineReducers({
-  timer
+  curriculam
 });

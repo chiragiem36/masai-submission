@@ -1,22 +1,20 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
   pointer-events: none;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
 }
 
 .App-link {
@@ -32,11 +30,184 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+  width: 100%;
+  position: sticky;
+  top: 10px;
+  z-index: 2;
+  background: white;
+}
+
+.subject {
+  color:rgba(150, 150, 150, 1);
+  font-size: 20px;
+  padding-bottom: 4px;
+  border-bottom: solid 2px rgba(150, 150, 150, .3);
+  justify-content: left;
+  font-weight: 700;
+  letter-spacing: .8px;
+}
+
+.description {
+  border-bottom: solid 2px rgba(150, 150, 150, .3);
+}
+
+.description > div {
+  align-items: flex-start;
+  margin-top: 16px;
+  padding-bottom: 16px;
+}
+
+.description > div > span:first-child {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.description > div:first-child > span:last-child {
+  opacity: .3;
+}
+
+.standard {
+  width: 60%;
+}
+
+.actions {
+  width: 25%;
+}
+
+.indent-levels {
+  width: 15%;
+}
+
+.indent-block {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(220, 220, 220, .4);
+}
+
+.action-buttons {
+  width: 32px;
+  height: 32px;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  opacity: .15;
+}
+
+.added {
+  opacity: .5;
+}
+
+.action-buttons:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.task-list {
+  width: 100%;
+}
+
+.task-input {
+  width: 60%;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  padding: 4px;
+  font-weight: 700;
+  opacity: .7;
+  outline-width: 0;
+}
+
+::-webkit-input-placeholder {
+  color: rgba(200, 200, 200, 1);
+}
+
+.input:focus {
+  outline-width: 0;
+  color: #02cbd6;
+}
+
+button.add-button {
+  width: 100%;
+  padding: 8px;
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: #2479a3;
+  color: white;
+}
+
+button.add-json-button {
+  width: 150px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #2479a3;
+  color: white;
+}
+
+.add-button > img {
+  width: 24px;
+  height: auto;
+  margin-right: 8px;
+}
+
+#drag {
+  background-color: white;
+  background-position: center;
+  background-image: url("http://cdn.onlinewebfonts.com/svg/img_182198.png");
+}
+
+.indent {
+  background-color: white;
+  background-position: center;
+  background-image: url("https://image.flaticon.com/icons/png/512/17/17264.png");
+}
+
+#indent-right {
+  transform: rotateY(180deg);
+}
+
+#delete {
+  background-color: white;
+  background-position: center;
+  background-image: url("https://cdn4.iconfinder.com/data/icons/bold-stroke/512/trash_garbage_recycle_bin-512.png");
+}
+
+.indent-1 {
+  margin-left: 20px;
+}
+
+.indent-2 {
+  margin-left: 40px;
+}
+
+.indent-3 {
+  margin-left: 60px;
+}
+
+.text-indent-1 {
+  color: #02cbd6;
+  font-size: 20px;
+}
+
+.text-indent-2 {
+  color: rgb(40, 40, 40);
+  font-size: 20px;
+}
+
+.text-indent-3 {
+  color: rgb(150, 150, 150);
+  font-size: 20px;
+}
+
+.new-task {
+  width: 100%;
+}
+
+.json-input > button, .json-input > input {
+  padding: 8px;
+  border-radius: 3px;
+  width: 350px;
 }

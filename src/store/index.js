@@ -1,4 +1,4 @@
-import {applyMiddleware, compose, createStore} from 'redux';
+import {createStore} from 'redux';
 import reducers from '../reducers/index';
 
 export default function configureStore(initialState) {
